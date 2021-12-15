@@ -20,6 +20,18 @@ to get all of your software check and updated.
 
 Certainly, you should not depend on this tool for anything important!
 
+## Building the tool
+
+You can build it simply with:
+
+    cargo build --release
+
+
+However, I'm also a big fan of [Earthly](https://earthly.dev) so you can also build it with:
+
+    earthly +build
+
+
 ## How it works
 
 This tool tries to connect on the default ports this exploit uses, namely:

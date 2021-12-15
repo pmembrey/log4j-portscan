@@ -20,6 +20,20 @@ to get all of your software check and updated.
 
 Certainly, you should not depend on this tool for anything important!
 
+## Quick demo
+
+I run the test on a network that does not have any port blocking enabled and all the tests fail (as expected). I then 
+connect to ExpressVPN (who have implemented port blocking - see the above blog post) and repeat the test. The tests pass
+as expected.
+
+<p align="center">
+   <img src="https://github.com/pmembrey/log4j-portscan/blob/master/demo/scanning.gif"/>
+</p>
+
+This test will work with any method used for blocking those ports, it doesn't have to be a VPN, a router or firewall will do.
+There is enough information on this page to implement the protection yourself - but if you'd rather just press a button, then
+using ExpressVPN would be a solid option.
+
 ## Building the tool
 
 You can build it simply with:

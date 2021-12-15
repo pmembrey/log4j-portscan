@@ -27,7 +27,9 @@ connect to ExpressVPN (who have implemented port blocking - see the above blog p
 as expected.
 
 <p align="center">
-   <img src="https://github.com/pmembrey/log4j-portscan/blob/master/demo/scanning.gif"/>
+
+![](demo/scanning.gif)
+
 </p>
 
 This test will work with any method used for blocking those ports, it doesn't have to be a VPN, a router or firewall will do.

@@ -36,6 +36,16 @@ This test will work with any method used for blocking those ports, it doesn't ha
 There is enough information on this page to implement the protection yourself - but if you'd rather just press a button, then
 using ExpressVPN would be a solid option.
 
+## Installing from crates.io
+
+You can install from [crates.io](https://crates.io) with:
+
+    cargo install log4j-portscan
+
+It should now be in your path, so it can be run with:
+
+    $ log4j-portscan
+
 ## Building the tool
 
 You can build it simply with:
@@ -48,7 +58,7 @@ However, I'm also a big fan of [Earthly](https://earthly.dev) so you can also bu
     earthly +build
 
 
-## Running the tool
+## Running the tool (from source)
 
 Because the tool is hard coded to use the test server I set up, there isn't anything you need
 to do other than run it. The easiest way if you're running from source is:

@@ -2,8 +2,12 @@
 name = "log4j-portscan"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
+authors = ["peter@membrey.hk"]
+license = "MIT"
+readme = "README.md"
+license-file ="LICENSE"
+repository = "https://github.com/pmembrey/log4j-portscan/"
+keywords = ["log4j"]
+description = "A simple little tool that checks if your machine can connect to the default ports used by the log4shell exploit"
 [dependencies]
 paris = "1.5"

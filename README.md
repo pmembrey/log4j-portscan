@@ -48,6 +48,14 @@ However, I'm also a big fan of [Earthly](https://earthly.dev) so you can also bu
     earthly +build
 
 
+## Running the tool
+
+Because the tool is hard coded to use the test server I set up, there isn't anything you need
+to do other than run it. The easiest way if you're running from source is:
+
+    cargo run
+
+
 ## How it works
 
 This tool tries to connect on the default ports this exploit uses, namely:
@@ -65,6 +73,48 @@ Note: If an attacker uses a different port, blocking the default ports
 The host the app tries to connect to these ports on an AWS instance I
 created at http://log4j.the.engineer . nginx is binding to all of the
 ports - there's nothing dangerous or malicious hosted.
+
+## But I want my own server...
+
+Perhaps you'd rather set up your own test server? No problem, it's pretty
+straight forward. These instructions are based on a Debian install, but it
+will be almost identical on Ubuntu.
+
+First get your machine or VM installed with Debian and then:
+
+    # Update and upgrade packages
+    apt-get update
+    apt-get upgrade
+
+    # Install nginx (our pretend malicious server)
+    apt-get install nginx
+
+    # Edit the config file (described below)
+    vim /etc/nginx/sites-enabled/default
+
+    # Restart nginx
+    systemctl restart nginx
+
+Remember to make sure that any firewall you have allows those ports through.
+
+Here's the config I added to to the config file:
+
+    server {
+            listen 80 default_server;
+
+            # Extra ports to listen on
+            listen 389 default_server;
+            listen 636 default_server;
+            listen 1099 default_server;
+            listen 1389 default_server;
+            listen 3268 default_server;
+            listen 3269 default_server;
+
+            listen [::]:80 default_server;
+
+That should do it!
+
+Note: Don't forget to update the tool to point to your server's IP address 
 
 ## You need to upgrade!
 

@@ -20,6 +20,9 @@ to get all of your software check and updated.
 
 Certainly, you should not depend on this tool for anything important!
 
+*Note:* The server this app uses by default (`log4j.the.engineer`) is no longer running, but there are instructions further down that
+explain how to create your own server for testing.
+
 ## Quick demo
 
 I run the test on a network that does not have any port blocking enabled and all the tests fail (as expected). I then 
